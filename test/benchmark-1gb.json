@@ -1,0 +1,88 @@
+{
+  "program": "index.js",
+  "input": "input/ad_data.csv",
+  "inputBytes": 1043304870,
+  "environment": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "release": "10.0.19045",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 9 5900X 12-Core Processor",
+    "logicalCpus": 24,
+    "totalRamBytes": 34239102976
+  },
+  "method": {
+    "runs": 3,
+    "osCacheFlushed": false,
+    "scheduling": "Three current-code runs, interleaved with unreported comparison runs. No regression tests concurrent with measurements.",
+    "elapsed": "Parent performance.now() around spawnSync of the production CLI, including startup through child completion",
+    "validation": "Preload timestamps exported records() call through DuckDBInstance.create() invocation; includes temporary spill directory creation after parsing",
+    "engineThroughExit": "DuckDBInstance.create() invocation through process exit, including report publication and cleanup",
+    "memory": "Child process.resourceUsage().maxRSS at exit, in KiB; excludes parent measurement process",
+    "summary": "Independent medians of timings and maximum process high-water mark across the three current-code runs",
+    "output": "Temporary working directories; every report byte-compared against saved first baseline output; repository reports untouched",
+    "scope": "Existing approximately 1 GB input only, native Windows; no synthetic comparison, Docker performance, or larger-file extrapolation",
+    "correctnessLimit": "No independent recomputation of the full dataset aggregates"
+  },
+  "summary": {
+    "medianElapsedSeconds": 51.2855164,
+    "medianValidationSeconds": 37.7310703,
+    "medianEngineThroughExitSeconds": 12.9982785,
+    "maxRssMiB": 284.9609375
+  },
+  "reports": [
+    {
+      "name": "top10_ctr.csv",
+      "bytes": 721,
+      "sha256": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052"
+    },
+    {
+      "name": "top10_cpa.csv",
+      "bytes": 721,
+      "sha256": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+    }
+  ],
+  "sourceSha256": {
+    "index.js": "5caff62df81ab42ef465c7e37996b0a49d9238914509469c7b89117478dc2355",
+    "scripts/campaign-report-common.cjs": "258625cb53407fb2a3154fad3fc56c4f442ec6bcff93996d44e7d3ac3100f11f"
+  },
+  "runs": [
+    {
+      "startedAt": "2026-11-11T14:10:21.940Z",
+      "elapsedSeconds": 48.9639138,
+      "validationSeconds": 36.7787244,
+      "engineThroughExitSeconds": 11.99668,
+      "maxRssKiB": 291800,
+      "exitCode": 0,
+      "reportsByteIdentical": true
+    },
+    {
+      "startedAt": "2026-11-11T14:12:13.000Z",
+      "elapsedSeconds": 51.7254176,
+      "validationSeconds": 37.7310703,
+      "engineThroughExitSeconds": 13.811008900000001,
+      "maxRssKiB": 251968,
+      "exitCode": 0,
+      "reportsByteIdentical": true
+    },
+    {
+      "startedAt": "2026-11-11T14:14:07.936Z",
+      "elapsedSeconds": 51.2855164,
+      "validationSeconds": 38.1055545,
+      "engineThroughExitSeconds": 12.9982785,
+      "maxRssKiB": 290256,
+      "exitCode": 0,
+      "reportsByteIdentical": true
+    }
+  ],
+  "regressionTests": {
+    "production": {
+      "passed": 85,
+      "failed": 0
+    },
+    "benchmarkSharedConsumers": {
+      "passed": 143,
+      "failed": 0
+    }
+  }
+}

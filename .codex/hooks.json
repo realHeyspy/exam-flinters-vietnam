@@ -1,0 +1,16 @@
+{
+  "description": "Append submitted prompts to prompts.md. Launch Codex from the repository root.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/log-prompt.cjs Codex",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

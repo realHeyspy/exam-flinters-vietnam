@@ -1,0 +1,18 @@
+{
+  "name": "campaign-report-benchmarks",
+  "private": true,
+  "type": "commonjs",
+  "engines": { "node": ">=24.14.1 <25" },
+  "scripts": {
+    "test": "node --test test/campaign-reports.test.cjs test/log-prompt.test.cjs",
+    "test:benchmark": "node --test test/benchmark-campaigns.test.cjs",
+    "benchmark:setup": "node test/benchmark-campaigns.cjs setup",
+    "benchmark:smoke": "node test/benchmark-campaigns.cjs smoke",
+    "benchmark:1gb": "node test/benchmark-campaigns.cjs 1gb",
+    "benchmark": "node test/benchmark-campaigns.cjs full"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "2.0.0-r.1",
+    "csv-parse": "7.0.3"
+  }
+}
